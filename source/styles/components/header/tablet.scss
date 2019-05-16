@@ -1,3 +1,23 @@
-.header {
-    background: green;
+header {
+
+    .container {
+        width: 93%;
+
+        .logo {
+            margin-top: 0;
+            margin-left: -2px;
+
+            &::before {
+                margin-top: 1px;
+            }
+        }
+
+        nav {
+            display: none;
+        }
+
+        .burger-menu {
+            display: flex;
+        }
+    }
 }

@@ -1,5 +1,91 @@
-.header {
-    width: 100%;
-    height: 200px;
-    background: red;
+header {
+    display: flex;
+    justify-content: center;
+    background-color: $color-1;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1170px;
+        height: 100px;
+
+        .logo {
+            margin-top: 4px;
+            color: $color-2;
+            font-family: 'Raleway', sans-serif;
+            font-size: 36px;
+            font-weight: 300;
+            text-transform: uppercase;
+
+            &::before {
+                content: '';
+                display: inline-block;
+                width: 27px;
+                height: 41px;
+                margin-right: 1.5px;
+                background-image: url(/images/header/logo.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+        }
+
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 3px;
+
+            a {
+                margin-right: 39.8px;
+                color: $color-2;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 14px;
+                text-transform: uppercase;
+
+                &:hover {
+                    transition: .2s;
+                    color: $color-4;
+                }
+
+                &:last-of-type {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .burger-menu {
+            display: none;
+            position: relative;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 39px;
+            margin-top: 8px;
+            background-color: $color-4;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 48px;
+                height: 31px;
+                transform: translate(-50%, -50%);
+                border: 1px solid $color-2;
+            }
+
+            .bar {
+                width: 30px;
+                height: 2px;
+                margin-bottom: 3px;
+                background-color: $color-2;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
 }
