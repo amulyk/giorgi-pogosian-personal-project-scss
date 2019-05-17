@@ -64,12 +64,17 @@
         max-width: 1170px;
 
         .monitor {
-            flex-basis: 587px;
-            margin-right: 30px;
+            margin-right: 90.5px;
+
+            img {
+                position: relative;
+                left: -2px;
+                width: 510px;
+                height: 414px;
+            }
         }
 
         .info {
-            flex-basis: 587px;
 
             h1 {
                 margin-top: 4px;
@@ -91,148 +96,66 @@
                 line-height: 27px;
             }
 
-            .responsive {
+            .text-tablet {
+                display: none;
+            }
+
+            .features-tablet {
                 display: none;
             }
 
             .features {
-                display: flex;
-                flex-direction: column;
+                display: grid;
+                grid-column-gap: 45px;
+                grid-row-gap: 5px;
+                grid-template-columns: 262.1px 262.9px;
 
-                &.responsive {
-                    display: none;
-                }
+                .feature {
 
-                .row-1 {
-                    display: flex;
-                    justify-content: flex-end;
-                    height: 90px;
-                    margin-bottom: 36px;
+                    h2 {
+                        margin-top: 2px;
+                        margin-bottom: 10px;
+                        font-family: 'Raleway', sans-serif;
+                        font-size: 18px;
+                        font-weight: 900;
+                        letter-spacing: -.4px;
+                        line-height: 19px;
+                        text-transform: uppercase;
+                    }
 
-                    .feature-1 {
+                    p {
+                        font-family: 'Open Sans', sans-serif;
+                        font-size: 13px;
+                        line-height: 22px;
+                    }
 
-                        img {
-                            margin-right: 29px;
-                            float: left;
-                        }
+                    &::before {
+                        content: '';
+                        display: block;
+                        position: relative;
+                        left: 1px;
+                        width: 63px;
+                        height: 63px;
+                        margin-right: 28px;
+                        float: left;
+                        border-radius: 50%;
+                        background-color: $color-5;
+                        background-image: url(/images/about/settings.png);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
 
-                        div {
-                            display: flex;
-                            flex-direction: column;
+                    $icons: 'location', 'heart', 'new';
 
-                            h2 {
-                                margin-top: 2px;
-                                margin-bottom: 10px;
-                                font-family: 'Raleway', sans-serif;
-                                font-size: 18px;
-                                font-weight: 900;
-                                letter-spacing: -.4px;
-                                line-height: 19px;
-                                text-transform: uppercase;
-                            }
+                    @each $icon in $icons {
 
-                            p {
-                                font-family: 'Open Sans', sans-serif;
-                                font-size: 13px;
-                                line-height: 22px;
-                            }
+                        &.#{$icon}::before {
+                            background-image: url(/images/about/#{$icon}.png);
                         }
                     }
 
-                    .feature-2 {
-
-                        img {
-                            margin-right: 29px;
-                            float: left;
-                        }
-
-                        div {
-                            display: flex;
-                            flex-direction: column;
-
-                            h2 {
-                                margin-top: 2px;
-                                margin-bottom: 10px;
-                                font-family: 'Raleway', sans-serif;
-                                font-size: 18px;
-                                font-weight: 900;
-                                letter-spacing: -.4px;
-                                line-height: 19px;
-                                text-transform: uppercase;
-                            }
-
-                            p {
-                                font-family: 'Open Sans', sans-serif;
-                                font-size: 13px;
-                                line-height: 22px;
-                            }
-                        }
-                    }
-                }
-
-                .row-2 {
-                    display: flex;
-                    justify-content: flex-end;
-                    height: 90px;
-
-                    .feature-3 {
-
-                        img {
-                            margin-right: 29px;
-                            float: left;
-                        }
-
-                        div {
-                            display: flex;
-                            flex-direction: column;
-
-                            h2 {
-                                margin-top: 2px;
-                                margin-bottom: 10px;
-                                font-family: 'Raleway', sans-serif;
-                                font-size: 18px;
-                                font-weight: 900;
-                                letter-spacing: -.4px;
-                                line-height: 19px;
-                                text-transform: uppercase;
-                            }
-
-                            p {
-                                font-family: 'Open Sans', sans-serif;
-                                font-size: 13px;
-                                line-height: 22px;
-                            }
-                        }
-                    }
-
-                    .feature-4 {
-
-                        img {
-                            margin-right: 29px;
-                            float: left;
-                        }
-
-                        div {
-                            display: flex;
-                            flex-direction: column;
-
-                            h2 {
-                                margin-top: 2px;
-                                margin-bottom: 10px;
-                                font-family: 'Raleway', sans-serif;
-                                font-size: 18px;
-                                font-weight: 900;
-                                letter-spacing: -.4px;
-                                line-height: 19px;
-                                text-transform: uppercase;
-                            }
-
-                            p {
-                                font-family: 'Open Sans', sans-serif;
-                                font-size: 13px;
-                                line-height: 22px;
-                            }
-                        }
+                    &:nth-child(even) {
+                        transform: translateX(2px);
                     }
                 }
             }
