@@ -14,14 +14,21 @@
         width: 23px;
         height: 37px;
 
+        $arrows: 'left', 'right';
+
+        @each $arrow in $arrows {
+
+            &-#{$arrow} {
+                background-image: url(/images/slide/arrow-#{$arrow}.png);
+            }
+        }
+
         &-left {
             left: 31px;
-            background-image: url(/images/slider/arrow-left.png);
         }
 
         &-right {
             right: 31px;
-            background-image: url(/images/slider/arrow-right.png);
         }
     }
 
