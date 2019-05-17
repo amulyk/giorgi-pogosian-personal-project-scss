@@ -1,3 +1,61 @@
 .about {
-    //
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+
+        .info {
+
+            h1 {
+                padding-bottom: 16.7px;
+                border-bottom: 1px solid $color-5;
+            }
+
+            > p {
+                display: none;
+            }
+
+            .responsive {
+                display: block;
+            }
+
+            .features {
+                display: none;
+
+                &.responsive {
+                    display: block;
+
+                    p {
+                        display: inline-block;
+                        font-size: 13px;
+                        line-height: 23px;
+
+                        &::before {
+                            content: '';
+                            display: inline-block;
+                            width: 16px;
+                            height: 16px;
+                            background-image: url(/images/about/check.png);
+                        }
+                    }
+
+                    a {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 138px;
+                        height: 42px;
+                        background-color: $color-4;
+                        color: $color-2;
+                        font-family: 'Raleway', sans-serif;
+                        font-size: 13px;
+                        font-weight: 900;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
 }
